@@ -14,24 +14,55 @@ Modifications:
 
 The directory to run propel-gen command:
 
-cd application/build/data
+Change to this directory before running any propel-gen command:
+
+application/build/data
+
+Reason: build.properties file is only set in relative locations i.e ../../models
+You can change it if you want.
 
 ==================================================
 
-propel/bin/propel-gen reverse
+Propel-gen Commands:
 
-propel/bin/propel-gen om
+propel/bin/propel-gen reverse <- Gather the structure from mysql db and generate schema.xml
 
-propel/bin/propel-gen sql
+propel/bin/propel-gen om <- Generate class files base from schema.xml
 
-propel/bin/propel-gen insert-sql
+propel/bin/propel-gen sql <- Generate sql file base from schema.xml
 
-propel/bin/propel-gen
+propel/bin/propel-gen insert-sql <- Purge mysql db if the user first create the schema.xml before creating tables in the db.
+
+propel/bin/propel-gen <- Generate config files for class-mapping.
 
 ==================================================
 
-Reference:
+If you want to test this project you must changed the db configurations in:
+
+1. application/build/data/build.properties <- Please refer on the link of the blog below on how to configure it.
+2. application/config/database.php <- Codeigniter database configuration.
+
+==================================================
+
+How to test if it works? Try to run the example file:
+application/controllers/test.php
+
+==================================================
+
+The added initializr are pre-modified CSS and JS if you want to start a project of your own.
+
+See index2.php file for an example.
+
+
+
+References:
+
 http://tenfastfeet.com/interact/blog-archive/39-blog/235-codeigniter-series-integrating-propel-into-codeigniter
 
-Reference for propel
 http://www.propelorm.org/documentation/
+
+http://codeigniter.com/user_guide/
+
+http://www.initializr.com/
+
+http://twitter.github.com/bootstrap/
