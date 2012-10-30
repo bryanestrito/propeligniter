@@ -16,14 +16,16 @@ The directory to run propel-gen command:
 
 cd application/build/data
 
+==================================================
+
 propel/bin/propel-gen reverse
-================================
+
 propel/bin/propel-gen om
-================================
+
 propel/bin/propel-gen sql
-================================
+
 propel/bin/propel-gen insert-sql
-================================
+
 propel/bin/propel-gen
 
 ==================================================
